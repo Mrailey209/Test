@@ -1,0 +1,165 @@
+{
+  "affiliate_id": "thegolflab08-20",
+  "categories": {
+    "speed": {
+      "name": "Speed Training",
+      "products": [
+        {
+          "id": "superspeed",
+          "name": "SuperSpeed Golf Training System",
+          "description": "The gold standard in overspeed training. Three weighted clubs designed to increase swing speed through neuromuscular training.",
+          "category": "Speed Training",
+          "rating": 4.9,
+          "badge": "Editor's Choice",
+          "asin": "B01N9K3ZRW",
+          "image": "https://m.media-amazon.com/images/I/61Ys3sQ+URL._AC_SL1500_.jpg"
+        },
+        {
+          "id": "prgr",
+          "name": "PRGR Portable Launch Monitor",
+          "description": "Affordable radar device for tracking swing speed at home or the range. Essential feedback for speed training protocols.",
+          "category": "Speed Training",
+          "rating": 4.5,
+          "badge": "Best Value",
+          "asin": "B07PRLSDPG",
+          "image": "https://m.media-amazon.com/images/I/61Uf6hs3URL._AC_SL1500_.jpg"
+        },
+        {
+          "id": "orangewhip",
+          "name": "Orange Whip Trainer",
+          "description": "Weighted flexible training aid that improves tempo, balance, and swing plane while building golf-specific strength.",
+          "category": "Speed Training",
+          "rating": 4.8,
+          "badge": "Great for Warm-Up",
+          "asin": "B004HO6IEI",
+          "image": "https://m.media-amazon.com/images/I/61qKz0wNURL._AC_SL1500_.jpg"
+        }
+      ]
+    },
+    "fitness": {
+      "name": "Fitness Equipment",
+      "products": [
+        {
+          "id": "trapbar",
+          "name": "Trap Bar / Hex Bar",
+          "description": "The deadlift variation every golfer should do. High-low handles accommodate all skill levels and reduce spine stress.",
+          "category": "Strength",
+          "rating": 4.9,
+          "badge": "Best for Deadlifts",
+          "asin": "B01LXZFNS4",
+          "image": "https://m.media-amazon.com/images/I/71CxNHzSURL._AC_SL1500_.jpg"
+        },
+        {
+          "id": "medballs",
+          "name": "Medicine Balls (8-14 lbs)",
+          "description": "Essential for rotational power training. Non-bounce versions are ideal for wall throws and slams.",
+          "category": "Power",
+          "rating": 4.7,
+          "badge": "Must-Have",
+          "asin": "B07GZQNXV5",
+          "image": "https://m.media-amazon.com/images/I/71MZOY2UQSL._AC_SL1500_.jpg"
+        },
+        {
+          "id": "loopbands",
+          "name": "Mini Loop Bands Set",
+          "description": "Versatile resistance bands for hip activation, shoulder work, and rotational exercises. Travel-friendly training.",
+          "category": "Mobility",
+          "rating": 4.6,
+          "badge": "Great Value",
+          "asin": "B07CZH4PGS",
+          "image": "https://m.media-amazon.com/images/I/81pf1zlUdBL._AC_SL1500_.jpg"
+        },
+        {
+          "id": "kettlebell",
+          "name": "Kettlebell (24-32 kg)",
+          "description": "Perfect for swings, goblet squats, and single-arm work. One of the most versatile pieces of equipment for golfers.",
+          "category": "Strength",
+          "rating": 4.8,
+          "badge": "Essential",
+          "asin": "B00XM2MRGI",
+          "image": "https://m.media-amazon.com/images/I/61E+OhgMBOL._AC_SL1500_.jpg"
+        }
+      ]
+    },
+    "technology": {
+      "name": "Technology",
+      "products": [
+        {
+          "id": "garminr10",
+          "name": "Garmin Approach R10",
+          "description": "Affordable personal launch monitor with 16+ metrics. Great for practice and home simulator use.",
+          "category": "Launch Monitor",
+          "rating": 4.4,
+          "badge": "Best Budget",
+          "asin": "B0932QDWGT",
+          "image": "https://m.media-amazon.com/images/I/61TqYMmGURL._AC_SL1500_.jpg"
+        },
+        {
+          "id": "mevoplus",
+          "name": "FlightScope Mevo+",
+          "description": "Professional-grade data in a portable package. Radar-based accuracy for serious practice and club fitting.",
+          "category": "Launch Monitor",
+          "rating": 4.8,
+          "badge": "Best Portable",
+          "asin": "B084DG5M7V",
+          "image": "https://m.media-amazon.com/images/I/61kXdYKYURL._AC_SL1500_.jpg"
+        },
+        {
+          "id": "hackmotion",
+          "name": "HackMotion Wrist Sensor",
+          "description": "Biofeedback device that tracks wrist angles throughout the swing. Instant audio feedback for real-time improvement.",
+          "category": "Swing Analysis",
+          "rating": 4.7,
+          "badge": "Best for Feel",
+          "asin": "B09GY7D1XM",
+          "image": "https://m.media-amazon.com/images/I/61G+q8xgURL._AC_SL1500_.jpg"
+        }
+      ]
+    },
+    "recovery": {
+      "name": "Recovery",
+      "products": [
+        {
+          "id": "foamroller",
+          "name": "TriggerPoint GRID Foam Roller",
+          "description": "Multi-density surface for targeted myofascial release. Essential for T-spine mobility and post-round recovery.",
+          "category": "Mobility",
+          "rating": 4.9,
+          "badge": "Best Overall",
+          "asin": "B0040EGNIU",
+          "image": "https://m.media-amazon.com/images/I/71J5h5CWPAL._AC_SL1500_.jpg"
+        },
+        {
+          "id": "theragun",
+          "name": "Theragun Pro",
+          "description": "Percussive therapy device for deep muscle treatment. Reduces soreness and improves recovery between rounds and workouts.",
+          "category": "Massage",
+          "rating": 4.8,
+          "badge": "Premium Choice",
+          "asin": "B086Z6LF7F",
+          "image": "https://m.media-amazon.com/images/I/71h6PzHK8TL._AC_SL1500_.jpg"
+        },
+        {
+          "id": "lacrosseballs",
+          "name": "Lacrosse Ball Set",
+          "description": "Simple but effective for targeted trigger point release. Great for glutes, forearms, and feet.",
+          "category": "Mobility",
+          "rating": 4.5,
+          "badge": "Best Budget",
+          "asin": "B00BCRE7MS",
+          "image": "https://m.media-amazon.com/images/I/71nK+XNBXIL._AC_SL1500_.jpg"
+        },
+        {
+          "id": "stretchstrap",
+          "name": "Stretch Strap with Loops",
+          "description": "Numbered loops allow consistent stretching positions. Great for hamstrings, shoulders, and hip flexors.",
+          "category": "Stretching",
+          "rating": 4.4,
+          "badge": "Simple & Effective",
+          "asin": "B00065X222",
+          "image": "https://m.media-amazon.com/images/I/61FQb2eXURL._AC_SL1500_.jpg"
+        }
+      ]
+    }
+  }
+}

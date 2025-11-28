@@ -2,151 +2,187 @@
 
 A complete, single-page golf fitness website with workouts, mobility routines, range sessions, training gear reviews, and periodized programs.
 
-## Quick Start (5 Minutes)
+**Live Site:** https://aquamarine-praline-0f4f0b.netlify.app/
 
-### Option 1: Netlify (Recommended - FREE)
+---
 
-1. Go to [netlify.com](https://netlify.com) and sign up for a free account
-2. From the dashboard, click "Add new site" > "Deploy manually"
-3. Drag and drop the `index.html` file onto the upload area
-4. Your site is live! You'll get a URL like `golf-lab-abc123.netlify.app`
+## Auto-Deploy Setup (Recommended)
 
-### Option 2: GitHub Pages (FREE)
+Connect your GitHub repo to Netlify for automatic deployments. Any push to GitHub will update your live site within 30 seconds.
 
-1. Create a new repository on GitHub
-2. Upload `index.html` to the repository
-3. Go to Settings > Pages
-4. Select "main" branch and save
-5. Your site will be at `yourusername.github.io/repo-name`
+### Step 1: Connect Netlify to GitHub
 
-### Option 3: Vercel (FREE)
+1. Log in to [Netlify](https://app.netlify.com)
+2. Click your site (`aquamarine-praline-0f4f0b`)
+3. Go to **Site settings** > **Build & deploy** > **Continuous deployment**
+4. Click **Link site to Git**
+5. Choose **GitHub** and authorize Netlify
+6. Select this repository: `Mrailey209/Test`
+7. Set build settings:
+   - **Branch to deploy:** `main` (or your default branch)
+   - **Build command:** (leave empty)
+   - **Publish directory:** `/` or `.`
+8. Click **Deploy site**
 
-1. Go to [vercel.com](https://vercel.com) and sign up
-2. Click "New Project" > "Import" your GitHub repo or upload files
-3. Deploy with one click
-4. Get a URL like `golf-lab.vercel.app`
+Now every push to GitHub automatically updates your website!
 
-## Custom Domain Setup (Optional)
+---
 
-### Purchasing a Domain (~$12/year)
+## Updating Products (Easy!)
 
-Recommended registrars:
-- [Namecheap](https://namecheap.com)
-- [Google Domains](https://domains.google)
-- [Cloudflare](https://cloudflare.com/products/registrar)
+Edit `products.json` to add, remove, or update products.
 
-Suggested domains:
-- `thegolflab.com`
-- `golflab.co`
-- `golflabnewsletter.com`
+### Add a New Product
 
-### Connecting to Netlify
+Open `products.json` and add a new product to any category:
 
-1. In Netlify, go to "Domain settings"
-2. Click "Add custom domain"
-3. Enter your domain name
-4. Add the DNS records Netlify provides to your domain registrar
-5. Wait 24-48 hours for DNS propagation
-
-## Newsletter Integration (Beehiiv)
-
-### Setting Up Beehiiv
-
-1. Sign up at [beehiiv.com](https://beehiiv.com) (free tier available)
-2. Create your publication "The Golf Lab"
-3. Customize your branding to match the website colors:
-   - Primary Green: `#1a5336`
-   - Gold Accent: `#c9a227`
-
-### Embedding the Signup Form
-
-Replace the newsletter form in `index.html` with your Beehiiv embed code:
-
-```html
-<!-- Find this section in index.html -->
-<form class="newsletter-form" onsubmit="handleNewsletter(event)">
-    <input type="email" placeholder="Enter your email" required>
-    <button type="submit">Subscribe Free</button>
-</form>
-
-<!-- Replace with Beehiiv embed -->
-<iframe
-    src="https://embeds.beehiiv.com/YOUR-PUBLICATION-ID"
-    data-test-id="beehiiv-embed"
-    width="100%"
-    height="52"
-    frameborder="0"
-    scrolling="no"
-    style="border-radius: 6px; background-color: transparent;">
-</iframe>
+```json
+{
+  "id": "newproduct",
+  "name": "Product Name",
+  "description": "Product description here.",
+  "category": "Category Name",
+  "rating": 4.5,
+  "badge": "New Addition",
+  "asin": "AMAZON-ASIN-HERE",
+  "image": "https://m.media-amazon.com/images/I/XXXXX.jpg"
+}
 ```
 
-## Section URLs for Newsletters
+### Find Amazon ASIN
 
-Use these URLs in your Beehiiv newsletters to link to specific content:
+1. Go to the Amazon product page
+2. Look in the URL for `/dp/XXXXXXXXXX/`
+3. That 10-character code is the ASIN
 
-| Section | URL Path | Use Case |
-|---------|----------|----------|
-| Home | `yourdomain.com/#home` | General landing |
-| Workouts | `yourdomain.com/#workouts` | Weekly workout emails |
-| Mobility | `yourdomain.com/#mobility` | Mobility tip emails |
-| Range Sessions | `yourdomain.com/#range` | Practice plan emails |
-| Gear Reviews | `yourdomain.com/#gear` | Product recommendation emails |
-| Programs | `yourdomain.com/#programs` | Program overview emails |
+### Find Amazon Product Image
 
-## Website Features
+1. Right-click the product image on Amazon
+2. Select "Copy image address"
+3. Use that URL in the `image` field
 
-### 6 Complete Sections
+### Update Affiliate ID
 
-1. **Home** - Hero banner, stats, content cards, newsletter signup
-2. **Workouts** - 4 complete programs (Lower Body, Upper Body, Rotational, Full Body)
-3. **Mobility** - 4 routines (T-Spine, Hips, Shoulders, Full Pre-Round)
-4. **Range Sessions** - 4 practice plans (Driver, Irons, Short Game, Complete)
-5. **Training Gear** - 12+ product reviews in 4 categories
-6. **Programs** - 4-month periodization timeline
+Change the `affiliate_id` at the top of `products.json`:
 
-### Technical Features
+```json
+{
+  "affiliate_id": "thegolflab08-20",
+  ...
+}
+```
 
-- Single HTML file (no server required)
-- Mobile responsive design
-- URL hash routing for deep linking
-- Tab navigation within sections
-- Research citations throughout
-- Professional green/gold color scheme
+---
+
+## Updating News (Weekly)
+
+Edit `news.json` to update the news section.
+
+### Add a New Article
+
+```json
+{
+  "id": 7,
+  "featured": false,
+  "date": "December 1, 2024",
+  "title": "Your News Headline Here",
+  "summary": "A brief summary of the article (1-2 sentences).",
+  "image": "https://images.unsplash.com/photo-XXXXX?w=600&h=300&fit=crop",
+  "link": "https://example.com/full-article"
+}
+```
+
+### Make an Article Featured
+
+Set `"featured": true` for the main story (displayed larger at the top).
+
+### Free Image Sources
+
+- [Unsplash](https://unsplash.com) - Search "golf" for free images
+- Add `?w=600&h=300&fit=crop` to any Unsplash URL to resize
+
+---
+
+## Quick Workflow
+
+### To Update Products:
+
+1. Edit `products.json`
+2. Commit and push to GitHub
+3. Site updates automatically in ~30 seconds
+
+### To Update News:
+
+1. Edit `news.json`
+2. Commit and push to GitHub
+3. Site updates automatically in ~30 seconds
+
+### Using GitHub Web Interface:
+
+1. Go to your repo on GitHub
+2. Click on `products.json` or `news.json`
+3. Click the pencil icon to edit
+4. Make your changes
+5. Click "Commit changes"
+6. Done! Site updates automatically
+
+---
+
+## File Structure
+
+```
+/
+├── index.html           # Main website
+├── products.json        # Product data (edit this for products)
+├── news.json            # News articles (edit this for news)
+├── README.md            # This guide
+├── content-database.md  # All workout/mobility content
+└── newsletter-links.md  # Links for Beehiiv emails
+```
+
+---
+
+## Section URLs
+
+| Section | URL |
+|---------|-----|
+| Home | https://aquamarine-praline-0f4f0b.netlify.app/#home |
+| News | https://aquamarine-praline-0f4f0b.netlify.app/#news |
+| Workouts | https://aquamarine-praline-0f4f0b.netlify.app/#workouts |
+| Mobility | https://aquamarine-praline-0f4f0b.netlify.app/#mobility |
+| Range Sessions | https://aquamarine-praline-0f4f0b.netlify.app/#range |
+| Gear | https://aquamarine-praline-0f4f0b.netlify.app/#gear |
+| Programs | https://aquamarine-praline-0f4f0b.netlify.app/#programs |
+
+---
+
+## Amazon Affiliate Info
+
+- **Affiliate ID:** `thegolflab08-20`
+- **Products:** 14 total with affiliate links
+- **FTC Disclosure:** Added to Gear section
+
+---
 
 ## Customization
 
 ### Changing Colors
 
-Edit the CSS variables at the top of `index.html`:
+Edit the CSS variables in `index.html`:
 
 ```css
 :root {
-    --primary-green: #1a5336;      /* Main brand color */
-    --primary-green-light: #2d7a4e;
-    --primary-green-dark: #0f3321;
-    --gold: #c9a227;               /* Accent color */
-    --gold-light: #e6c45c;
-    --gold-dark: #9a7b1c;
-    --cream: #f8f6f0;              /* Background */
+    --primary-green: #1a5336;
+    --gold: #c9a227;
+    --cream: #f8f6f0;
 }
 ```
 
-### Adding New Content
+### Adding Google Analytics
 
-Each section uses a consistent structure. To add a new workout:
-
-1. Find the workouts section in the HTML
-2. Copy an existing `<div class="program-card">` block
-3. Modify the content
-4. Add a new tab button if needed
-
-### Adding Analytics
-
-Add Google Analytics before the closing `</head>` tag:
+Add before `</head>` in `index.html`:
 
 ```html
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -155,27 +191,6 @@ Add Google Analytics before the closing `</head>` tag:
   gtag('config', 'G-XXXXXXXXXX');
 </script>
 ```
-
-## File Structure
-
-```
-/
-├── index.html           # Complete website (single file)
-├── README.md            # This deployment guide
-├── content-database.md  # All content in markdown format
-└── newsletter-links.md  # Copy-paste links for emails
-```
-
-## Support
-
-For questions about:
-- **Deployment**: Check Netlify/Vercel documentation
-- **Newsletter**: Beehiiv help center
-- **Customization**: Edit the HTML/CSS directly
-
-## License
-
-This template is provided for personal and commercial use. Customize it for your golf newsletter or fitness brand.
 
 ---
 

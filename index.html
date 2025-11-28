@@ -1031,7 +1031,8 @@
                     <p>Tour updates, equipment news, and training insights from the world of golf</p>
                 </div>
 
-                <div class="news-grid">
+                <div class="news-grid" id="news-grid-dynamic">
+                    <!-- News loaded dynamically from news.json -->
                     <!-- Featured News -->
                     <div class="news-card featured-news">
                         <div class="news-image">
@@ -2204,7 +2205,7 @@
 
                 <!-- Speed Training Gear -->
                 <div id="gear-speed" class="tab-content active">
-                    <div class="product-grid">
+                    <div class="product-grid" id="gear-speed-dynamic">
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="https://m.media-amazon.com/images/I/61Ys3sQ+URL._AC_SL1500_.jpg" alt="SuperSpeed Golf Training System">
@@ -2254,7 +2255,7 @@
 
                 <!-- Fitness Equipment -->
                 <div id="gear-fitness" class="tab-content">
-                    <div class="product-grid">
+                    <div class="product-grid" id="gear-fitness-dynamic">
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="https://m.media-amazon.com/images/I/71CxNHzSURL._AC_SL1500_.jpg" alt="Trap Bar Hex Bar">
@@ -2319,7 +2320,7 @@
 
                 <!-- Technology -->
                 <div id="gear-technology" class="tab-content">
-                    <div class="product-grid">
+                    <div class="product-grid" id="gear-technology-dynamic">
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="https://m.media-amazon.com/images/I/61TqYMmGURL._AC_SL1500_.jpg" alt="Garmin Approach R10">
@@ -2369,7 +2370,7 @@
 
                 <!-- Recovery -->
                 <div id="gear-recovery" class="tab-content">
-                    <div class="product-grid">
+                    <div class="product-grid" id="gear-recovery-dynamic">
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="https://m.media-amazon.com/images/I/71J5h5CWPAL._AC_SL1500_.jpg" alt="TriggerPoint GRID Foam Roller">
@@ -2651,6 +2652,104 @@
                 const section = this.getAttribute('data-section');
                 showSection(section);
             });
+        });
+
+        // ============================================
+        // DYNAMIC CONTENT LOADING FROM JSON FILES
+        // ============================================
+
+        // Generate star rating HTML
+        function getStarRating(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalf = rating % 1 >= 0.5;
+            let stars = '★'.repeat(fullStars);
+            if (hasHalf) stars += '½';
+            stars += '☆'.repeat(5 - Math.ceil(rating));
+            return stars.substring(0, 5);
+        }
+
+        // Render a single product card
+        function renderProductCard(product, affiliateId) {
+            const amazonUrl = `https://www.amazon.com/dp/${product.asin}?tag=${affiliateId}`;
+            return `
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">${product.category}</div>
+                        <h4>${product.name}</h4>
+                        <p>${product.description}</p>
+                        <div class="product-rating">
+                            ${getStarRating(product.rating)} <span>${product.rating}/5 - ${product.badge}</span>
+                        </div>
+                        <a href="${amazonUrl}" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render a single news card
+        function renderNewsCard(article) {
+            const featuredClass = article.featured ? 'featured-news' : '';
+            return `
+                <div class="news-card ${featuredClass}">
+                    <div class="news-image">
+                        <img src="${article.image}" alt="${article.title}" loading="lazy">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">${article.date}</div>
+                        <h3>${article.title}</h3>
+                        <p>${article.summary}</p>
+                        <a href="${article.link}" class="news-link">Read Full Story →</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Load and render products from JSON
+        async function loadProducts() {
+            try {
+                const response = await fetch('products.json');
+                const data = await response.json();
+                const affiliateId = data.affiliate_id;
+
+                // Render each category
+                Object.keys(data.categories).forEach(categoryKey => {
+                    const category = data.categories[categoryKey];
+                    const container = document.getElementById(`gear-${categoryKey}-dynamic`);
+                    if (container) {
+                        container.innerHTML = category.products.map(p => renderProductCard(p, affiliateId)).join('');
+                    }
+                });
+
+                console.log('Products loaded successfully');
+            } catch (error) {
+                console.log('Using static product content (products.json not found)');
+            }
+        }
+
+        // Load and render news from JSON
+        async function loadNews() {
+            try {
+                const response = await fetch('news.json');
+                const data = await response.json();
+
+                const container = document.getElementById('news-grid-dynamic');
+                if (container) {
+                    container.innerHTML = data.articles.map(article => renderNewsCard(article)).join('');
+                }
+
+                console.log('News loaded successfully');
+            } catch (error) {
+                console.log('Using static news content (news.json not found)');
+            }
+        }
+
+        // Load dynamic content on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProducts();
+            loadNews();
         });
     </script>
 </body>
