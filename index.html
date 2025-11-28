@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Golf Lab - Science-Based Golf Fitness & Training</title>
+    <meta name="description" content="Elevate your golf game with research-backed workouts, mobility routines, range sessions, and training programs designed for golfers of all levels.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #1a5336;
+            --primary-green-light: #2d7a4e;
+            --primary-green-dark: #0f3321;
+            --gold: #c9a227;
+            --gold-light: #e6c45c;
+            --gold-dark: #9a7b1c;
+            --cream: #f8f6f0;
+            --cream-dark: #ebe7db;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #6b6b6b;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            padding: 0 20px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 70px;
+        }
+
+        .section {
+            display: none;
+            min-height: calc(100vh - 70px);
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--gold-light);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(201, 162, 39, 0.3);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--primary-green-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: -60px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Content Cards Grid */
+        .content-section {
+            padding: 100px 20px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-image {
+            height: 160px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: var(--cream);
+            color: var(--primary-green);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            gap: 8px;
+            background: var(--cream-dark);
+            padding: 8px;
+            border-radius: var(--radius-md);
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border: none;
+            background: transparent;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-medium);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            background: var(--white);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Workout/Routine Cards */
+        .program-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 24px;
+        }
+
+        .program-header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+            color: var(--white);
+            padding: 24px;
+        }
+
+        .program-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .program-header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .program-meta {
+            display: flex;
+            gap: 20px;
+            margin-top: 16px;
+        }
+
+        .program-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .program-body {
+            padding: 24px;
+        }
+
+        /* Exercise Table */
+        .exercise-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .exercise-table th {
+            text-align: left;
+            padding: 12px;
+            background: var(--cream);
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .exercise-table td {
+            padding: 14px 12px;
+            border-bottom: 1px solid var(--cream-dark);
+            font-size: 0.95rem;
+        }
+
+        .exercise-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .exercise-table tr:hover {
+            background: var(--cream);
+        }
+
+        .exercise-name {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .exercise-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* Research Citation */
+        .citation {
+            background: var(--cream);
+            border-left: 4px solid var(--gold);
+            padding: 16px 20px;
+            margin-top: 20px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+
+        .citation-title {
+            font-weight: 600;
+            color: var(--primary-green);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .citation p {
+            font-size: 0.85rem;
+            color: var(--text-medium);
+            font-style: italic;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-image {
+            height: 180px;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .product-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        .product-rating span {
+            color: var(--text-medium);
+            font-weight: 500;
+        }
+
+        /* Program Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--cream-dark);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            border: 3px solid var(--cream);
+        }
+
+        .timeline-month {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--primary-green-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .timeline-item p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .timeline-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .timeline-detail {
+            background: var(--cream);
+            padding: 12px;
+            border-radius: var(--radius-sm);
+        }
+
+        .timeline-detail-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .timeline-detail-value {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        /* Newsletter Signup */
+        .newsletter {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .newsletter p {
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input {
+            padding: 14px 20px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            width: 300px;
+            max-width: 100%;
+        }
+
+        .newsletter-form button {
+            padding: 14px 28px;
+            background: var(--gold);
+            color: var(--primary-green-dark);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--gold-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-green-dark);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-copyright {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: -40px;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .tab-nav {
+                flex-direction: column;
+            }
+
+            .exercise-table {
+                font-size: 0.85rem;
+            }
+
+            .exercise-table th,
+            .exercise-table td {
+                padding: 10px 8px;
+            }
+
+            .timeline-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-icon">⛳</span>
+                The Golf Lab
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active" data-section="home">Home</a></li>
+                <li><a href="#workouts" data-section="workouts">Workouts</a></li>
+                <li><a href="#mobility" data-section="mobility">Mobility</a></li>
+                <li><a href="#range" data-section="range">Range Sessions</a></li>
+                <li><a href="#gear" data-section="gear">Gear</a></li>
+                <li><a href="#programs" data-section="programs">Programs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="hero-badge">🔬 Science-Based Golf Training</span>
+                    <h1>Train Like a Tour Pro</h1>
+                    <p>Research-backed workouts, mobility routines, and practice plans designed to add distance, improve consistency, and keep you injury-free on the course.</p>
+                    <div class="hero-cta">
+                        <a href="#workouts" class="btn btn-primary" onclick="showSection('workouts')">
+                            💪 Start Training
+                        </a>
+                        <a href="#programs" class="btn btn-secondary" onclick="showSection('programs')">
+                            📅 View Programs
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Complete Workouts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Mobility Routines</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Range Sessions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Month Programs</div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Everything You Need</h2>
+                    <p>From gym workouts to range sessions, we've got your golf training covered</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card" onclick="showSection('workouts')">
+                        <div class="card-image">💪</div>
+                        <div class="card-content">
+                            <span class="card-tag">Strength</span>
+                            <h3>Golf Workouts</h3>
+                            <p>Build power and stability with programs designed specifically for the rotational demands of the golf swing.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="showSection('mobility')">
+                        <div class="card-image">🧘</div>
+                        <div class="card-content">
+                            <span class="card-tag">Flexibility</span>
+                            <h3>Mobility Routines</h3>
+                            <p>Improve your T-spine rotation, hip mobility, and shoulder flexibility for a fuller, more powerful swing.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="showSection('range')">
+                        <div class="card-image">🎯</div>
+                        <div class="card-content">
+                            <span class="card-tag">Practice</span>
+                            <h3>Range Sessions</h3>
+                            <p>Structured practice plans that maximize your time at the range with purposeful drills and games.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="showSection('gear')">
+                        <div class="card-image">⚡</div>
+                        <div class="card-content">
+                            <span class="card-tag">Equipment</span>
+                            <h3>Training Gear</h3>
+                            <p>Honest reviews of the best training aids, fitness equipment, and technology for golfers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <div class="newsletter-content">
+                    <h3>Join The Golf Lab Newsletter</h3>
+                    <p>Get weekly workouts, mobility tips, and exclusive content delivered to your inbox.</p>
+                    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe Free</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORKOUTS SECTION -->
+        <section id="workouts" class="section">
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Golf Workouts</h2>
+                    <p>Build the strength and power foundation for a better golf game</p>
+                </div>
+
+                <div class="tab-nav">
+                    <button class="tab-btn active" onclick="showTab('workouts', 'lower-body')">Lower Body</button>
+                    <button class="tab-btn" onclick="showTab('workouts', 'upper-body')">Upper Body</button>
+                    <button class="tab-btn" onclick="showTab('workouts', 'rotational')">Rotational Power</button>
+                    <button class="tab-btn" onclick="showTab('workouts', 'full-body')">Full Body</button>
+                </div>
+
+                <!-- Lower Body Workout -->
+                <div id="workouts-lower-body" class="tab-content active">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Lower Body Foundation</h3>
+                            <p>Build the leg drive and hip power that creates distance off the tee</p>
+                            <div class="program-meta">
+                                <span>⏱️ 45-50 min</span>
+                                <span>📊 Intermediate</span>
+                                <span>🔄 2x per week</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Exercise</th>
+                                        <th>Sets</th>
+                                        <th>Reps</th>
+                                        <th>Rest</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Trap Bar Deadlift</div>
+                                            <div class="exercise-note">Focus on hip hinge pattern</div>
+                                        </td>
+                                        <td>4</td>
+                                        <td>6-8</td>
+                                        <td>2-3 min</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Bulgarian Split Squat</div>
+                                            <div class="exercise-note">DB in each hand, rear foot elevated</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>8-10/leg</td>
+                                        <td>90 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Romanian Deadlift (Single Leg)</div>
+                                            <div class="exercise-note">DB or KB, reach toward floor</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>10-12/leg</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Goblet Squat</div>
+                                            <div class="exercise-note">KB at chest, full depth</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>12-15</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Lateral Band Walk</div>
+                                            <div class="exercise-note">Mini band above knees</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>15/direction</td>
+                                        <td>45 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Calf Raises</div>
+                                            <div class="exercise-note">Slow eccentric, pause at top</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>15-20</td>
+                                        <td>30 sec</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Research Insight</div>
+                                <p>A study by Hellström (2009) found that lower body strength, particularly hip and leg power, accounts for 53% of clubhead speed variance among golfers. This program targets all major muscle groups involved in generating ground reaction forces.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upper Body Workout -->
+                <div id="workouts-upper-body" class="tab-content">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Upper Body Power</h3>
+                            <p>Develop the pulling strength and scapular stability for consistent ball striking</p>
+                            <div class="program-meta">
+                                <span>⏱️ 40-45 min</span>
+                                <span>📊 Intermediate</span>
+                                <span>🔄 2x per week</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Exercise</th>
+                                        <th>Sets</th>
+                                        <th>Reps</th>
+                                        <th>Rest</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Cable Face Pull</div>
+                                            <div class="exercise-note">External rotation at top</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>15</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Dumbbell Row (One Arm)</div>
+                                            <div class="exercise-note">Elbow at 45°, squeeze at top</div>
+                                        </td>
+                                        <td>4</td>
+                                        <td>8-10/arm</td>
+                                        <td>90 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Push-Up with Rotation</div>
+                                            <div class="exercise-note">T-rotation at top of each rep</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>8-10/side</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Lat Pulldown</div>
+                                            <div class="exercise-note">Wide grip, controlled tempo</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>10-12</td>
+                                        <td>90 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Cable Woodchop (Low to High)</div>
+                                            <div class="exercise-note">Rotate through hips</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>12/side</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Dead Bug</div>
+                                            <div class="exercise-note">Keep lower back pressed to floor</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>10/side</td>
+                                        <td>45 sec</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Research Insight</div>
+                                <p>Research from the Titleist Performance Institute shows that the ratio of pulling to pushing exercises should be 2:1 for golfers to maintain shoulder health and prevent the rounded posture that leads to swing faults.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rotational Power Workout -->
+                <div id="workouts-rotational" class="tab-content">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Rotational Power Development</h3>
+                            <p>The explosive movements that translate directly to swing speed</p>
+                            <div class="program-meta">
+                                <span>⏱️ 35-40 min</span>
+                                <span>📊 Advanced</span>
+                                <span>🔄 1-2x per week</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Exercise</th>
+                                        <th>Sets</th>
+                                        <th>Reps</th>
+                                        <th>Rest</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Medicine Ball Rotational Throw</div>
+                                            <div class="exercise-note">Against wall, maximum velocity</div>
+                                        </td>
+                                        <td>4</td>
+                                        <td>8/side</td>
+                                        <td>90 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Cable Anti-Rotation Press (Pallof)</div>
+                                            <div class="exercise-note">Hold at extension 3 sec</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>10/side</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Landmine Rotation</div>
+                                            <div class="exercise-note">Hip-initiated rotation</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>10/side</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Half-Kneeling Chop</div>
+                                            <div class="exercise-note">Cable or band, high to low</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>12/side</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Russian Twist with MB</div>
+                                            <div class="exercise-note">Feet off ground optional</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>15/side</td>
+                                        <td>45 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Plank with Hip Rotation</div>
+                                            <div class="exercise-note">Drop hips side to side</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>12/side</td>
+                                        <td>45 sec</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Research Insight</div>
+                                <p>Research published in the Journal of Strength & Conditioning found that 8 weeks of rotational power training increased driving distance by an average of 4.3% without any swing changes. The key is training in the transverse plane.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Body Workout -->
+                <div id="workouts-full-body" class="tab-content">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Full Body Golf Conditioning</h3>
+                            <p>Complete workout for golfers with limited training time</p>
+                            <div class="program-meta">
+                                <span>⏱️ 50-60 min</span>
+                                <span>📊 All Levels</span>
+                                <span>🔄 2-3x per week</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Exercise</th>
+                                        <th>Sets</th>
+                                        <th>Reps</th>
+                                        <th>Rest</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Goblet Squat to Press</div>
+                                            <div class="exercise-note">Thruster variation with KB</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>10</td>
+                                        <td>90 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Bent Over Row</div>
+                                            <div class="exercise-note">Barbell or dumbbells</div>
+                                        </td>
+                                        <td>4</td>
+                                        <td>10</td>
+                                        <td>90 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Romanian Deadlift</div>
+                                            <div class="exercise-note">Barbell, moderate weight</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>10</td>
+                                        <td>90 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Push-Up Variations</div>
+                                            <div class="exercise-note">Standard, wide, or decline</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>12-15</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Walking Lunge</div>
+                                            <div class="exercise-note">Bodyweight or with DBs</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>10/leg</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Plank (Front and Side)</div>
+                                            <div class="exercise-note">30 sec each position</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>3 positions</td>
+                                        <td>30 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Cable Rotation</div>
+                                            <div class="exercise-note">Standing, golf stance</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>15/side</td>
+                                        <td>45 sec</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Research Insight</div>
+                                <p>A full-body approach 2-3x per week has been shown to produce similar strength gains as split routines for recreational athletes, while being more time-efficient and allowing for better recovery between golf rounds.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOBILITY SECTION -->
+        <section id="mobility" class="section">
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Mobility Routines</h2>
+                    <p>Unlock your swing potential with targeted flexibility work</p>
+                </div>
+
+                <div class="tab-nav">
+                    <button class="tab-btn active" onclick="showTab('mobility', 't-spine')">T-Spine</button>
+                    <button class="tab-btn" onclick="showTab('mobility', 'hips')">Hips</button>
+                    <button class="tab-btn" onclick="showTab('mobility', 'shoulders')">Shoulders</button>
+                    <button class="tab-btn" onclick="showTab('mobility', 'full-routine')">Full Routine</button>
+                </div>
+
+                <!-- T-Spine Mobility -->
+                <div id="mobility-t-spine" class="tab-content active">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>T-Spine Rotation Routine</h3>
+                            <p>The cornerstone of a full backswing and consistent contact</p>
+                            <div class="program-meta">
+                                <span>⏱️ 10-12 min</span>
+                                <span>📊 All Levels</span>
+                                <span>🔄 Daily/Pre-round</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Exercise</th>
+                                        <th>Sets</th>
+                                        <th>Duration/Reps</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Cat-Cow</div>
+                                            <div class="exercise-note">Breathe fully, move slowly</div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>10 cycles</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Open Book Stretch</div>
+                                            <div class="exercise-note">Side-lying, follow hand with eyes</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>8/side</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Thread the Needle</div>
+                                            <div class="exercise-note">From all-fours position</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>8/side</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Seated Rotation with Reach</div>
+                                            <div class="exercise-note">Arm across chest, rotate</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>30 sec/side</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Foam Roll T-Spine Extension</div>
+                                            <div class="exercise-note">Hands behind head, extend over roller</div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Quadruped Rotation</div>
+                                            <div class="exercise-note">Hand on head, elbow to ceiling</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>10/side</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Research Insight</div>
+                                <p>According to TPI data, 64% of amateur golfers lack adequate thoracic spine rotation. Limited T-spine mobility is directly correlated with swing faults like early extension, sway, and loss of posture.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hip Mobility -->
+                <div id="mobility-hips" class="tab-content">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Hip Mobility Sequence</h3>
+                            <p>Open up your hips for more rotation and power transfer</p>
+                            <div class="program-meta">
+                                <span>⏱️ 12-15 min</span>
+                                <span>📊 All Levels</span>
+                                <span>🔄 3-4x per week</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Exercise</th>
+                                        <th>Sets</th>
+                                        <th>Duration/Reps</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">90/90 Hip Switch</div>
+                                            <div class="exercise-note">Sit tall, rotate between positions</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>10 switches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">World's Greatest Stretch</div>
+                                            <div class="exercise-note">Lunge, rotate, reach</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>5/side</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Pigeon Pose</div>
+                                            <div class="exercise-note">Active version, lean forward</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>45 sec/side</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Hip Flexor Stretch (Half-Kneeling)</div>
+                                            <div class="exercise-note">Squeeze glute, slight lean forward</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>30 sec/side</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Frog Stretch</div>
+                                            <div class="exercise-note">Rock forward and back</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>45 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Hip CARs</div>
+                                            <div class="exercise-note">Controlled Articular Rotations</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>5 circles/direction</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Research Insight</div>
+                                <p>Hip internal rotation is one of the strongest predictors of swing efficiency. Tour players average 45-50° of hip internal rotation, while most amateurs have less than 30°. This sequence targets both mobility and motor control.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shoulder Mobility -->
+                <div id="mobility-shoulders" class="tab-content">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Shoulder Health Routine</h3>
+                            <p>Maintain range of motion and prevent common golf injuries</p>
+                            <div class="program-meta">
+                                <span>⏱️ 8-10 min</span>
+                                <span>📊 All Levels</span>
+                                <span>🔄 2-3x per week</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Exercise</th>
+                                        <th>Sets</th>
+                                        <th>Duration/Reps</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Shoulder CARs</div>
+                                            <div class="exercise-note">Slow, controlled full circles</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>5/direction</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Wall Slides</div>
+                                            <div class="exercise-note">Keep back and arms against wall</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Doorway Pec Stretch</div>
+                                            <div class="exercise-note">Elbow at 90°, step through</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>30 sec/side</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Band Pull-Apart</div>
+                                            <div class="exercise-note">Light resistance, squeeze shoulder blades</div>
+                                        </td>
+                                        <td>3</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Sleeper Stretch</div>
+                                            <div class="exercise-note">Side-lying, gentle internal rotation</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>30 sec/side</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Prone Y-T-W</div>
+                                            <div class="exercise-note">Face down, lift arms in each position</div>
+                                        </td>
+                                        <td>2</td>
+                                        <td>8 each</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Research Insight</div>
+                                <p>Studies show golfers have significantly different shoulder rotation between dominant and non-dominant arms. This asymmetry can lead to injury if not addressed with targeted mobility and strengthening work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Mobility Routine -->
+                <div id="mobility-full-routine" class="tab-content">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Complete Pre-Round Routine</h3>
+                            <p>The 15-minute warm-up that prepares your body to play</p>
+                            <div class="program-meta">
+                                <span>⏱️ 15 min</span>
+                                <span>📊 All Levels</span>
+                                <span>🔄 Pre-round</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Exercise</th>
+                                        <th>Duration</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Light Walk or Jog</div>
+                                        </td>
+                                        <td>2 min</td>
+                                        <td>Increase heart rate</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Arm Circles (Forward/Back)</div>
+                                        </td>
+                                        <td>1 min</td>
+                                        <td>Small to large circles</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Hip Circles (Both Directions)</div>
+                                        </td>
+                                        <td>1 min</td>
+                                        <td>Stand on one leg</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">World's Greatest Stretch</div>
+                                        </td>
+                                        <td>2 min</td>
+                                        <td>5 per side</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Open Book Stretch</div>
+                                        </td>
+                                        <td>2 min</td>
+                                        <td>8 per side</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Half-Kneeling Hip Flexor</div>
+                                        </td>
+                                        <td>2 min</td>
+                                        <td>30 sec per side x2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Standing Trunk Rotations</div>
+                                        </td>
+                                        <td>1 min</td>
+                                        <td>Club across shoulders</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Practice Swings (50%/75%/100%)</div>
+                                        </td>
+                                        <td>3 min</td>
+                                        <td>Gradually build speed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Research Insight</div>
+                                <p>A dynamic warm-up can improve driving distance by 5-7 yards and significantly reduce injury risk. Static stretching should be reserved for post-round; dynamic movements are optimal pre-round.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANGE SESSIONS SECTION -->
+        <section id="range" class="section">
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Range Sessions</h2>
+                    <p>Structured practice plans that maximize your improvement</p>
+                </div>
+
+                <div class="tab-nav">
+                    <button class="tab-btn active" onclick="showTab('range', 'driver')">Driver Focus</button>
+                    <button class="tab-btn" onclick="showTab('range', 'iron')">Iron Precision</button>
+                    <button class="tab-btn" onclick="showTab('range', 'short-game')">Short Game</button>
+                    <button class="tab-btn" onclick="showTab('range', 'complete')">Complete Session</button>
+                </div>
+
+                <!-- Driver Focus Session -->
+                <div id="range-driver" class="tab-content active">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Driver Distance Session</h3>
+                            <p>Build confidence and speed off the tee</p>
+                            <div class="program-meta">
+                                <span>⏱️ 45 min</span>
+                                <span>🏌️ 50-60 balls</span>
+                                <span>📊 Speed Focus</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Block</th>
+                                        <th>Balls</th>
+                                        <th>Focus</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Warm-Up (Wedges to 7-Iron)</div>
+                                        </td>
+                                        <td>10</td>
+                                        <td>Build tempo, center contact</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Speed Swings (No Ball)</div>
+                                        </td>
+                                        <td>-</td>
+                                        <td>10 swings at max effort with whoosh sound</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Driver: 70% Effort</div>
+                                        </td>
+                                        <td>10</td>
+                                        <td>Focus on center face contact</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Driver: 85% Effort</div>
+                                        </td>
+                                        <td>10</td>
+                                        <td>Add speed while maintaining contact</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Driver: 100% Effort</div>
+                                        </td>
+                                        <td>10</td>
+                                        <td>Full speed, evaluate ball flight</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Shot Shaping: Fade/Draw</div>
+                                        </td>
+                                        <td>10</td>
+                                        <td>5 fades, 5 draws</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Play the Hole</div>
+                                        </td>
+                                        <td>10</td>
+                                        <td>Pick targets, simulate real shots</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Practice Tip</div>
+                                <p>The step-up approach (70% → 85% → 100%) is used by tour players to maintain speed while building consistent contact. Never start at full speed—always build up through your session.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Iron Precision Session -->
+                <div id="range-iron" class="tab-content">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Iron Precision Session</h3>
+                            <p>Dial in your distances and trajectory control</p>
+                            <div class="program-meta">
+                                <span>⏱️ 45 min</span>
+                                <span>🏌️ 60-70 balls</span>
+                                <span>📊 Distance Control</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Block</th>
+                                        <th>Balls</th>
+                                        <th>Focus</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Warm-Up (Wedges to 8-Iron)</div>
+                                        </td>
+                                        <td>15</td>
+                                        <td>Build tempo gradually</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">9-Iron: Stock Shot</div>
+                                        </td>
+                                        <td>10</td>
+                                        <td>Establish consistent carry distance</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">7-Iron: 3 Distances</div>
+                                        </td>
+                                        <td>15</td>
+                                        <td>Full, 3/4, 1/2 swing (5 each)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">5-Iron: Low & High</div>
+                                        </td>
+                                        <td>10</td>
+                                        <td>Ball position changes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Random Club Challenge</div>
+                                        </td>
+                                        <td>10</td>
+                                        <td>Different club each shot</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Scoring Zone (150-100 yds)</div>
+                                        </td>
+                                        <td>10</td>
+                                        <td>Aim at specific targets</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Practice Tip</div>
+                                <p>Elite golfers know their carry distances within 3 yards for every club. Use a launch monitor or GPS to track your actual distances—don't guess. The data will transform your course management.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Short Game Session -->
+                <div id="range-short-game" class="tab-content">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Short Game Mastery</h3>
+                            <p>Lower your scores from 100 yards and in</p>
+                            <div class="program-meta">
+                                <span>⏱️ 60 min</span>
+                                <span>🏌️ 80-100 shots</span>
+                                <span>📊 Scoring Focus</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Block</th>
+                                        <th>Shots</th>
+                                        <th>Focus</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Putting: Gate Drill</div>
+                                        </td>
+                                        <td>20</td>
+                                        <td>Tees 2" wider than putter, 3-foot putts</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Putting: Lag Practice</div>
+                                        </td>
+                                        <td>15</td>
+                                        <td>30, 40, 50 foot putts—2-putt zone</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Chipping: One Club Challenge</div>
+                                        </td>
+                                        <td>20</td>
+                                        <td>8-iron only, various lies</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Pitching: 30-50-70 Yards</div>
+                                        </td>
+                                        <td>15</td>
+                                        <td>5 shots to each distance</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Bunker: Basic Explosion</div>
+                                        </td>
+                                        <td>15</td>
+                                        <td>2" behind ball, splash sand</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Up-and-Down Challenge</div>
+                                        </td>
+                                        <td>15</td>
+                                        <td>Track save percentage</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Practice Tip</div>
+                                <p>65% of all strokes occur from 100 yards and in, yet most golfers spend 80% of practice time on full swings. Flip this ratio if you want to lower your scores quickly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Complete Session -->
+                <div id="range-complete" class="tab-content">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>Complete Practice Session</h3>
+                            <p>Balanced full-bag workout for overall improvement</p>
+                            <div class="program-meta">
+                                <span>⏱️ 90 min</span>
+                                <span>🏌️ 80-100 balls</span>
+                                <span>📊 Full Game</span>
+                            </div>
+                        </div>
+                        <div class="program-body">
+                            <table class="exercise-table">
+                                <thead>
+                                    <tr>
+                                        <th>Block</th>
+                                        <th>Time</th>
+                                        <th>Focus</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Physical Warm-Up</div>
+                                        </td>
+                                        <td>10 min</td>
+                                        <td>Dynamic stretches, no clubs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Putting Green</div>
+                                        </td>
+                                        <td>15 min</td>
+                                        <td>3-footers, lag putting, breaking putts</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Chipping/Pitching</div>
+                                        </td>
+                                        <td>15 min</td>
+                                        <td>Various lies and distances</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Wedge Play (Full Swings)</div>
+                                        </td>
+                                        <td>10 min</td>
+                                        <td>50-100 yard targets</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Iron Block</div>
+                                        </td>
+                                        <td>15 min</td>
+                                        <td>8-iron to 5-iron progression</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Woods/Hybrids</div>
+                                        </td>
+                                        <td>10 min</td>
+                                        <td>Fairway woods and hybrids</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Driver</div>
+                                        </td>
+                                        <td>10 min</td>
+                                        <td>Tempo focus, pick targets</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="exercise-name">Play 3 Holes</div>
+                                        </td>
+                                        <td>5 min</td>
+                                        <td>Simulate real course scenarios</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="citation">
+                                <div class="citation-title">📚 Practice Tip</div>
+                                <p>Always end with simulated play. This "transfer" practice is how you take range improvements to the course. Pick real holes from your home course and play them in your mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GEAR SECTION -->
+        <section id="gear" class="section">
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Training Gear</h2>
+                    <p>Honest reviews of the best equipment for golf fitness</p>
+                </div>
+
+                <div class="tab-nav">
+                    <button class="tab-btn active" onclick="showTab('gear', 'speed')">Speed Training</button>
+                    <button class="tab-btn" onclick="showTab('gear', 'fitness')">Fitness Equipment</button>
+                    <button class="tab-btn" onclick="showTab('gear', 'technology')">Technology</button>
+                    <button class="tab-btn" onclick="showTab('gear', 'recovery')">Recovery</button>
+                </div>
+
+                <!-- Speed Training Gear -->
+                <div id="gear-speed" class="tab-content active">
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image">🏌️</div>
+                            <div class="product-content">
+                                <div class="product-category">Speed Training</div>
+                                <h4>SuperSpeed Golf Training System</h4>
+                                <p>The gold standard in overspeed training. Three weighted clubs designed to increase swing speed through neuromuscular training.</p>
+                                <div class="product-rating">
+                                    ★★★★★ <span>4.9/5 - Editor's Choice</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">💨</div>
+                            <div class="product-content">
+                                <div class="product-category">Speed Training</div>
+                                <h4>PRGR Portable Launch Monitor</h4>
+                                <p>Affordable radar device for tracking swing speed at home or the range. Essential feedback for speed training protocols.</p>
+                                <div class="product-rating">
+                                    ★★★★☆ <span>4.5/5 - Best Value</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">🎯</div>
+                            <div class="product-content">
+                                <div class="product-category">Speed Training</div>
+                                <h4>Orange Whip Trainer</h4>
+                                <p>Weighted flexible training aid that improves tempo, balance, and swing plane while building golf-specific strength.</p>
+                                <div class="product-rating">
+                                    ★★★★★ <span>4.8/5 - Great for Warm-Up</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fitness Equipment -->
+                <div id="gear-fitness" class="tab-content">
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image">🏋️</div>
+                            <div class="product-content">
+                                <div class="product-category">Strength</div>
+                                <h4>Rogue Fitness Trap Bar</h4>
+                                <p>The deadlift variation every golfer should do. High-low handles accommodate all skill levels and reduce spine stress.</p>
+                                <div class="product-rating">
+                                    ★★★★★ <span>4.9/5 - Best for Deadlifts</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">⚡</div>
+                            <div class="product-content">
+                                <div class="product-category">Power</div>
+                                <h4>Medicine Balls (8-14 lbs)</h4>
+                                <p>Essential for rotational power training. Non-bounce versions are ideal for wall throws and slams.</p>
+                                <div class="product-rating">
+                                    ★★★★★ <span>4.7/5 - Must-Have</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">🎗️</div>
+                            <div class="product-content">
+                                <div class="product-category">Mobility</div>
+                                <h4>Mini Loop Bands Set</h4>
+                                <p>Versatile resistance bands for hip activation, shoulder work, and rotational exercises. Travel-friendly training.</p>
+                                <div class="product-rating">
+                                    ★★★★☆ <span>4.6/5 - Great Value</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">🔔</div>
+                            <div class="product-content">
+                                <div class="product-category">Strength</div>
+                                <h4>Kettlebell (24-32 kg)</h4>
+                                <p>Perfect for swings, goblet squats, and single-arm work. One of the most versatile pieces of equipment for golfers.</p>
+                                <div class="product-rating">
+                                    ★★★★★ <span>4.8/5 - Essential</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology -->
+                <div id="gear-technology" class="tab-content">
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image">📡</div>
+                            <div class="product-content">
+                                <div class="product-category">Launch Monitor</div>
+                                <h4>Garmin Approach R10</h4>
+                                <p>Affordable personal launch monitor with 16+ metrics. Great for practice and home simulator use.</p>
+                                <div class="product-rating">
+                                    ★★★★☆ <span>4.4/5 - Best Budget</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">📊</div>
+                            <div class="product-content">
+                                <div class="product-category">Launch Monitor</div>
+                                <h4>FlightScope Mevo+</h4>
+                                <p>Professional-grade data in a portable package. Radar-based accuracy for serious practice and club fitting.</p>
+                                <div class="product-rating">
+                                    ★★★★★ <span>4.8/5 - Best Portable</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">📱</div>
+                            <div class="product-content">
+                                <div class="product-category">Swing Analysis</div>
+                                <h4>HackMotion Wrist Sensor</h4>
+                                <p>Biofeedback device that tracks wrist angles throughout the swing. Instant audio feedback for real-time improvement.</p>
+                                <div class="product-rating">
+                                    ★★★★★ <span>4.7/5 - Best for Feel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recovery -->
+                <div id="gear-recovery" class="tab-content">
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image">🧘</div>
+                            <div class="product-content">
+                                <div class="product-category">Mobility</div>
+                                <h4>TriggerPoint GRID Foam Roller</h4>
+                                <p>Multi-density surface for targeted myofascial release. Essential for T-spine mobility and post-round recovery.</p>
+                                <div class="product-rating">
+                                    ★★★★★ <span>4.9/5 - Best Overall</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">💆</div>
+                            <div class="product-content">
+                                <div class="product-category">Massage</div>
+                                <h4>Theragun Pro</h4>
+                                <p>Percussive therapy device for deep muscle treatment. Reduces soreness and improves recovery between rounds and workouts.</p>
+                                <div class="product-rating">
+                                    ★★★★★ <span>4.8/5 - Premium Choice</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">🔵</div>
+                            <div class="product-content">
+                                <div class="product-category">Mobility</div>
+                                <h4>Lacrosse Ball Set</h4>
+                                <p>Simple but effective for targeted trigger point release. Great for glutes, forearms, and feet.</p>
+                                <div class="product-rating">
+                                    ★★★★☆ <span>4.5/5 - Best Budget</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">📐</div>
+                            <div class="product-content">
+                                <div class="product-category">Stretching</div>
+                                <h4>Stretch Strap with Loops</h4>
+                                <p>Numbered loops allow consistent stretching positions. Great for hamstrings, shoulders, and hip flexors.</p>
+                                <div class="product-rating">
+                                    ★★★★☆ <span>4.4/5 - Simple & Effective</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRAMS SECTION -->
+        <section id="programs" class="section">
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Training Programs</h2>
+                    <p>Structured periodization for year-round golf fitness</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-month">Month 1: Foundation</span>
+                        <h4>Build Your Base</h4>
+                        <p>Establish movement patterns, build general strength, and address mobility limitations. Focus on learning proper form before adding intensity.</p>
+                        <div class="timeline-details">
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Training Days</div>
+                                <div class="timeline-detail-value">3x per week</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Focus</div>
+                                <div class="timeline-detail-value">Movement Quality</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Key Exercises</div>
+                                <div class="timeline-detail-value">Goblet Squats, RDLs, Rows</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Mobility</div>
+                                <div class="timeline-detail-value">Daily 10-min routine</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-month">Month 2: Strength</span>
+                        <h4>Add Weight & Intensity</h4>
+                        <p>Progressive overload phase. Increase weights while maintaining form. Begin incorporating anti-rotation exercises and stability work.</p>
+                        <div class="timeline-details">
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Training Days</div>
+                                <div class="timeline-detail-value">3-4x per week</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Focus</div>
+                                <div class="timeline-detail-value">Progressive Overload</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Key Exercises</div>
+                                <div class="timeline-detail-value">Trap Bar DL, Split Squats</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Added Element</div>
+                                <div class="timeline-detail-value">Core Stability</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-month">Month 3: Power</span>
+                        <h4>Convert Strength to Speed</h4>
+                        <p>Explosive movements and speed training. Medicine ball work, jump variations, and overspeed training to maximize power output.</p>
+                        <div class="timeline-details">
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Training Days</div>
+                                <div class="timeline-detail-value">4x per week</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Focus</div>
+                                <div class="timeline-detail-value">Rate of Force Development</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Key Exercises</div>
+                                <div class="timeline-detail-value">MB Throws, Jumps, SuperSpeed</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Speed Goal</div>
+                                <div class="timeline-detail-value">+3-5 mph swing speed</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-month">Month 4: Performance</span>
+                        <h4>Peak for Competition</h4>
+                        <p>Reduce volume, maintain intensity. Focus on recovery, mobility, and golf-specific movements. Prepare your body for optimal on-course performance.</p>
+                        <div class="timeline-details">
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Training Days</div>
+                                <div class="timeline-detail-value">2-3x per week</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Focus</div>
+                                <div class="timeline-detail-value">Maintain & Peak</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Key Exercises</div>
+                                <div class="timeline-detail-value">Speed work, Mobility</div>
+                            </div>
+                            <div class="timeline-detail">
+                                <div class="timeline-detail-label">Recovery</div>
+                                <div class="timeline-detail-value">Prioritize rest days</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="citation" style="margin-top: 40px;">
+                    <div class="citation-title">📚 Program Design Philosophy</div>
+                    <p>This periodization model follows the same principles used by tour player fitness coaches. The progression from general fitness → specific strength → explosive power → performance peaking ensures you're at your physical best when it matters most.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#home" onclick="showSection('home')">Home</a>
+            <a href="#workouts" onclick="showSection('workouts')">Workouts</a>
+            <a href="#mobility" onclick="showSection('mobility')">Mobility</a>
+            <a href="#range" onclick="showSection('range')">Range Sessions</a>
+            <a href="#gear" onclick="showSection('gear')">Gear</a>
+            <a href="#programs" onclick="showSection('programs')">Programs</a>
+        </div>
+        <p class="footer-copyright">© 2024 The Golf Lab. All rights reserved. Train smarter, play better.</p>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show target section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Update URL hash
+            window.location.hash = sectionId;
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+
+            // Close mobile menu
+            document.getElementById('navLinks').classList.remove('open');
+        }
+
+        // Tab functionality
+        function showTab(section, tabId) {
+            const sectionEl = document.getElementById(section);
+
+            // Hide all tabs in this section
+            sectionEl.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(`${section}-${tabId}`).classList.add('active');
+
+            // Update tab buttons
+            sectionEl.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // Handle URL hash on load
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            }
+        });
+
+        // Handle hash changes
+        window.addEventListener('hashchange', function() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            }
+        });
+
+        // Newsletter form handler
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            alert(`Thanks for subscribing! We'll send updates to ${email}`);
+            e.target.reset();
+        }
+
+        // Add click handlers to nav links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = this.getAttribute('data-section');
+                showSection(section);
+            });
+        });
+    </script>
+</body>
+</html>
