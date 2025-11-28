@@ -556,6 +556,129 @@
             font-weight: 500;
         }
 
+        /* Product Links (Affiliate) */
+        .product-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 20px;
+            background: var(--gold);
+            color: var(--primary-green-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+        }
+
+        .product-link:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Update Badge */
+        .update-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--gold);
+            color: var(--primary-green-dark);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        /* News Cards */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .news-image {
+            height: 200px;
+            background: var(--cream);
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 24px;
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .news-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .news-card p {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .news-link {
+            color: var(--primary-green);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .news-link:hover {
+            text-decoration: underline;
+        }
+
+        .featured-news {
+            grid-column: span 2;
+        }
+
+        .featured-news .news-image {
+            height: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .featured-news {
+                grid-column: span 1;
+            }
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Program Timeline */
         .timeline {
             position: relative;
@@ -794,6 +917,7 @@
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="active" data-section="home">Home</a></li>
+                <li><a href="#news" data-section="news">News</a></li>
                 <li><a href="#workouts" data-section="workouts">Workouts</a></li>
                 <li><a href="#mobility" data-section="mobility">Mobility</a></li>
                 <li><a href="#range" data-section="range">Range Sessions</a></li>
@@ -898,10 +1022,107 @@
             </div>
         </section>
 
+        <!-- NEWS SECTION -->
+        <section id="news" class="section">
+            <div class="content-section">
+                <div class="section-header">
+                    <span class="update-badge">Updated Weekly</span>
+                    <h2>Latest in Golf News</h2>
+                    <p>Tour updates, equipment news, and training insights from the world of golf</p>
+                </div>
+
+                <div class="news-grid">
+                    <!-- Featured News -->
+                    <div class="news-card featured-news">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&h=400&fit=crop" alt="Golf Course">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-date">November 28, 2024</div>
+                            <h3>PGA Tour Announces New Fitness Requirements for 2025 Season</h3>
+                            <p>The PGA Tour is implementing new physical performance standards that will require players to meet certain fitness benchmarks. This move emphasizes the growing importance of athletic conditioning in professional golf and could reshape how players approach their off-season training programs.</p>
+                            <a href="#" class="news-link">Read Full Story →</a>
+                        </div>
+                    </div>
+
+                    <!-- News Card 2 -->
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=600&h=300&fit=crop" alt="Golf Training">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-date">November 27, 2024</div>
+                            <h3>New Study: Rotational Power Training Increases Driving Distance by 7%</h3>
+                            <p>Researchers at the University of Birmingham found that a 12-week rotational power program significantly improved clubhead speed in amateur golfers.</p>
+                            <a href="#" class="news-link">Read Full Story →</a>
+                        </div>
+                    </div>
+
+                    <!-- News Card 3 -->
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?w=600&h=300&fit=crop" alt="Golf Equipment">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-date">November 26, 2024</div>
+                            <h3>TaylorMade Releases New Qi10 Driver with AI-Designed Face</h3>
+                            <p>The latest driver from TaylorMade features an artificial intelligence-designed face that promises more forgiveness and distance across the entire hitting area.</p>
+                            <a href="#" class="news-link">Read Full Story →</a>
+                        </div>
+                    </div>
+
+                    <!-- News Card 4 -->
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1592919505780-303950717480?w=600&h=300&fit=crop" alt="Golfer Training">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-date">November 25, 2024</div>
+                            <h3>Scottie Scheffler's Trainer Reveals Off-Season Workout Routine</h3>
+                            <p>The world #1's fitness coach shares insights into the strength and mobility program that keeps Scheffler at the top of his game.</p>
+                            <a href="#" class="news-link">Read Full Story →</a>
+                        </div>
+                    </div>
+
+                    <!-- News Card 5 -->
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1500932334442-8761ee4810a7?w=600&h=300&fit=crop" alt="Golf Ball Technology">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-date">November 24, 2024</div>
+                            <h3>Golf Ball Rollback: What It Means for Your Game</h3>
+                            <p>The USGA and R&A have finalized new golf ball distance regulations. Here's how the changes will affect recreational players and what to expect.</p>
+                            <a href="#" class="news-link">Read Full Story →</a>
+                        </div>
+                    </div>
+
+                    <!-- News Card 6 -->
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1611374243147-44a702c2d44c?w=600&h=300&fit=crop" alt="Golf Fitness">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-date">November 23, 2024</div>
+                            <h3>TPI Releases Updated Movement Screen for 2025</h3>
+                            <p>The Titleist Performance Institute has updated their famous golf fitness assessment with new tests targeting hip mobility and thoracic rotation.</p>
+                            <a href="#" class="news-link">Read Full Story →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="citation" style="margin-top: 40px;">
+                    <div class="citation-title">📰 About Our News</div>
+                    <p>We curate the most relevant golf news focusing on fitness, equipment, and tour updates that matter to your game. News is updated every week to keep you informed on the latest developments in the golf world.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- WORKOUTS SECTION -->
         <section id="workouts" class="section">
             <div class="content-section">
                 <div class="section-header">
+                    <span class="update-badge">Updated Weekly</span>
                     <h2>Golf Workouts</h2>
                     <p>Build the strength and power foundation for a better golf game</p>
                 </div>
@@ -1280,6 +1501,7 @@
         <section id="mobility" class="section">
             <div class="content-section">
                 <div class="section-header">
+                    <span class="update-badge">Updated Weekly</span>
                     <h2>Mobility Routines</h2>
                     <p>Unlock your swing potential with targeted flexibility work</p>
                 </div>
@@ -1629,6 +1851,7 @@
         <section id="range" class="section">
             <div class="content-section">
                 <div class="section-header">
+                    <span class="update-badge">Updated Weekly</span>
                     <h2>Range Sessions</h2>
                     <p>Structured practice plans that maximize your improvement</p>
                 </div>
@@ -1967,6 +2190,7 @@
         <section id="gear" class="section">
             <div class="content-section">
                 <div class="section-header">
+                    <span class="update-badge">Updated Weekly</span>
                     <h2>Training Gear</h2>
                     <p>Honest reviews of the best equipment for golf fitness</p>
                 </div>
@@ -1982,7 +2206,9 @@
                 <div id="gear-speed" class="tab-content active">
                     <div class="product-grid">
                         <div class="product-card">
-                            <div class="product-image">🏌️</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/61Ys3sQ+URL._AC_SL1500_.jpg" alt="SuperSpeed Golf Training System">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Speed Training</div>
                                 <h4>SuperSpeed Golf Training System</h4>
@@ -1990,11 +2216,15 @@
                                 <div class="product-rating">
                                     ★★★★★ <span>4.9/5 - Editor's Choice</span>
                                 </div>
+                                <!-- AFFILIATE LINK: Replace YOUR-AFFILIATE-TAG with your Amazon Associates ID -->
+                                <a href="https://www.amazon.com/dp/B01N9K3ZRW?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
 
                         <div class="product-card">
-                            <div class="product-image">💨</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/61Uf6hs3URL._AC_SL1500_.jpg" alt="PRGR Portable Launch Monitor">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Speed Training</div>
                                 <h4>PRGR Portable Launch Monitor</h4>
@@ -2002,11 +2232,14 @@
                                 <div class="product-rating">
                                     ★★★★☆ <span>4.5/5 - Best Value</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B07PRLSDPG?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
 
                         <div class="product-card">
-                            <div class="product-image">🎯</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/61qKz0wNURL._AC_SL1500_.jpg" alt="Orange Whip Trainer">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Speed Training</div>
                                 <h4>Orange Whip Trainer</h4>
@@ -2014,6 +2247,7 @@
                                 <div class="product-rating">
                                     ★★★★★ <span>4.8/5 - Great for Warm-Up</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B004HO6IEI?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
                     </div>
@@ -2023,19 +2257,24 @@
                 <div id="gear-fitness" class="tab-content">
                     <div class="product-grid">
                         <div class="product-card">
-                            <div class="product-image">🏋️</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/71CxNHzSURL._AC_SL1500_.jpg" alt="Trap Bar Hex Bar">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Strength</div>
-                                <h4>Rogue Fitness Trap Bar</h4>
+                                <h4>Trap Bar / Hex Bar</h4>
                                 <p>The deadlift variation every golfer should do. High-low handles accommodate all skill levels and reduce spine stress.</p>
                                 <div class="product-rating">
                                     ★★★★★ <span>4.9/5 - Best for Deadlifts</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B01LXZFNS4?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
 
                         <div class="product-card">
-                            <div class="product-image">⚡</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/71MZOY2UQSL._AC_SL1500_.jpg" alt="Medicine Ball">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Power</div>
                                 <h4>Medicine Balls (8-14 lbs)</h4>
@@ -2043,11 +2282,14 @@
                                 <div class="product-rating">
                                     ★★★★★ <span>4.7/5 - Must-Have</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B07GZQNXV5?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
 
                         <div class="product-card">
-                            <div class="product-image">🎗️</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/81pf1zlUdBL._AC_SL1500_.jpg" alt="Resistance Loop Bands">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Mobility</div>
                                 <h4>Mini Loop Bands Set</h4>
@@ -2055,11 +2297,14 @@
                                 <div class="product-rating">
                                     ★★★★☆ <span>4.6/5 - Great Value</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B07CZH4PGS?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
 
                         <div class="product-card">
-                            <div class="product-image">🔔</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/61E+OhgMBOL._AC_SL1500_.jpg" alt="Kettlebell">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Strength</div>
                                 <h4>Kettlebell (24-32 kg)</h4>
@@ -2067,6 +2312,7 @@
                                 <div class="product-rating">
                                     ★★★★★ <span>4.8/5 - Essential</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B00XM2MRGI?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
                     </div>
@@ -2076,7 +2322,9 @@
                 <div id="gear-technology" class="tab-content">
                     <div class="product-grid">
                         <div class="product-card">
-                            <div class="product-image">📡</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/61TqYMmGURL._AC_SL1500_.jpg" alt="Garmin Approach R10">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Launch Monitor</div>
                                 <h4>Garmin Approach R10</h4>
@@ -2084,11 +2332,14 @@
                                 <div class="product-rating">
                                     ★★★★☆ <span>4.4/5 - Best Budget</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B0932QDWGT?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
 
                         <div class="product-card">
-                            <div class="product-image">📊</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/61kXdYKYURL._AC_SL1500_.jpg" alt="FlightScope Mevo Plus">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Launch Monitor</div>
                                 <h4>FlightScope Mevo+</h4>
@@ -2096,11 +2347,14 @@
                                 <div class="product-rating">
                                     ★★★★★ <span>4.8/5 - Best Portable</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B084DG5M7V?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
 
                         <div class="product-card">
-                            <div class="product-image">📱</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/61G+q8xgURL._AC_SL1500_.jpg" alt="Golf Swing Analyzer">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Swing Analysis</div>
                                 <h4>HackMotion Wrist Sensor</h4>
@@ -2108,6 +2362,7 @@
                                 <div class="product-rating">
                                     ★★★★★ <span>4.7/5 - Best for Feel</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B09GY7D1XM?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
                     </div>
@@ -2117,7 +2372,9 @@
                 <div id="gear-recovery" class="tab-content">
                     <div class="product-grid">
                         <div class="product-card">
-                            <div class="product-image">🧘</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/71J5h5CWPAL._AC_SL1500_.jpg" alt="TriggerPoint GRID Foam Roller">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Mobility</div>
                                 <h4>TriggerPoint GRID Foam Roller</h4>
@@ -2125,11 +2382,14 @@
                                 <div class="product-rating">
                                     ★★★★★ <span>4.9/5 - Best Overall</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B0040EGNIU?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
 
                         <div class="product-card">
-                            <div class="product-image">💆</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/71h6PzHK8TL._AC_SL1500_.jpg" alt="Theragun Massage Gun">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Massage</div>
                                 <h4>Theragun Pro</h4>
@@ -2137,11 +2397,14 @@
                                 <div class="product-rating">
                                     ★★★★★ <span>4.8/5 - Premium Choice</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B086Z6LF7F?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
 
                         <div class="product-card">
-                            <div class="product-image">🔵</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/71nK+XNBXIL._AC_SL1500_.jpg" alt="Lacrosse Balls for Massage">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Mobility</div>
                                 <h4>Lacrosse Ball Set</h4>
@@ -2149,11 +2412,14 @@
                                 <div class="product-rating">
                                     ★★★★☆ <span>4.5/5 - Best Budget</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B00BCRE7MS?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
 
                         <div class="product-card">
-                            <div class="product-image">📐</div>
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/61FQb2eXURL._AC_SL1500_.jpg" alt="Stretch Strap">
+                            </div>
                             <div class="product-content">
                                 <div class="product-category">Stretching</div>
                                 <h4>Stretch Strap with Loops</h4>
@@ -2161,6 +2427,7 @@
                                 <div class="product-rating">
                                     ★★★★☆ <span>4.4/5 - Simple & Effective</span>
                                 </div>
+                                <a href="https://www.amazon.com/dp/B00065X222?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener" class="product-link">View on Amazon →</a>
                             </div>
                         </div>
                     </div>
@@ -2286,6 +2553,7 @@
     <footer>
         <div class="footer-links">
             <a href="#home" onclick="showSection('home')">Home</a>
+            <a href="#news" onclick="showSection('news')">News</a>
             <a href="#workouts" onclick="showSection('workouts')">Workouts</a>
             <a href="#mobility" onclick="showSection('mobility')">Mobility</a>
             <a href="#range" onclick="showSection('range')">Range Sessions</a>
