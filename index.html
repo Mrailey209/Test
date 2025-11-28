@@ -397,6 +397,23 @@
             margin-bottom: 24px;
         }
 
+        .program-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .program-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.5));
+        }
+
         .program-header {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
             color: var(--white);
@@ -1138,6 +1155,7 @@
                 <!-- Lower Body Workout -->
                 <div id="workouts-lower-body" class="tab-content active">
                     <div class="program-card">
+                        <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=400&fit=crop')"></div>
                         <div class="program-header">
                             <h3>Lower Body Foundation</h3>
                             <p>Build the leg drive and hip power that creates distance off the tee</p>
@@ -1226,6 +1244,7 @@
                 <!-- Upper Body Workout -->
                 <div id="workouts-upper-body" class="tab-content">
                     <div class="program-card">
+                        <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c149a?w=800&h=400&fit=crop')"></div>
                         <div class="program-header">
                             <h3>Upper Body Power</h3>
                             <p>Develop the pulling strength and scapular stability for consistent ball striking</p>
@@ -1314,6 +1333,7 @@
                 <!-- Rotational Power Workout -->
                 <div id="workouts-rotational" class="tab-content">
                     <div class="program-card">
+                        <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=800&h=400&fit=crop')"></div>
                         <div class="program-header">
                             <h3>Rotational Power Development</h3>
                             <p>The explosive movements that translate directly to swing speed</p>
@@ -1402,6 +1422,7 @@
                 <!-- Full Body Workout -->
                 <div id="workouts-full-body" class="tab-content">
                     <div class="program-card">
+                        <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=800&h=400&fit=crop')"></div>
                         <div class="program-header">
                             <h3>Full Body Golf Conditioning</h3>
                             <p>Complete workout for golfers with limited training time</p>
@@ -1517,6 +1538,7 @@
                 <!-- T-Spine Mobility -->
                 <div id="mobility-t-spine" class="tab-content active">
                     <div class="program-card">
+                        <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=400&fit=crop')"></div>
                         <div class="program-header">
                             <h3>T-Spine Rotation Routine</h3>
                             <p>The cornerstone of a full backswing and consistent contact</p>
@@ -1598,6 +1620,7 @@
                 <!-- Hip Mobility -->
                 <div id="mobility-hips" class="tab-content">
                     <div class="program-card">
+                        <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=400&fit=crop')"></div>
                         <div class="program-header">
                             <h3>Hip Mobility Sequence</h3>
                             <p>Open up your hips for more rotation and power transfer</p>
@@ -1679,6 +1702,7 @@
                 <!-- Shoulder Mobility -->
                 <div id="mobility-shoulders" class="tab-content">
                     <div class="program-card">
+                        <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=400&fit=crop')"></div>
                         <div class="program-header">
                             <h3>Shoulder Health Routine</h3>
                             <p>Maintain range of motion and prevent common golf injuries</p>
@@ -1760,6 +1784,7 @@
                 <!-- Full Mobility Routine -->
                 <div id="mobility-full-routine" class="tab-content">
                     <div class="program-card">
+                        <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=800&h=400&fit=crop')"></div>
                         <div class="program-header">
                             <h3>Complete Pre-Round Routine</h3>
                             <p>The 15-minute warm-up that prepares your body to play</p>
@@ -2208,7 +2233,7 @@
                     <div class="product-grid" id="gear-speed-dynamic">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/61Ys3sQ+URL._AC_SL1500_.jpg" alt="SuperSpeed Golf Training System">
+                                <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&h=300&fit=crop" alt="SuperSpeed Golf Training System">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Speed Training</div>
@@ -2223,7 +2248,7 @@
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/61Uf6hs3URL._AC_SL1500_.jpg" alt="PRGR Portable Launch Monitor">
+                                <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=400&h=300&fit=crop" alt="PRGR Portable Launch Monitor">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Speed Training</div>
@@ -2238,7 +2263,7 @@
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/61qKz0wNURL._AC_SL1500_.jpg" alt="Orange Whip Trainer">
+                                <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=400&h=300&fit=crop" alt="Orange Whip Trainer">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Speed Training</div>
@@ -2258,7 +2283,7 @@
                     <div class="product-grid" id="gear-fitness-dynamic">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/71CxNHzSURL._AC_SL1500_.jpg" alt="Trap Bar Hex Bar">
+                                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop" alt="Trap Bar Hex Bar">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Strength</div>
@@ -2273,7 +2298,7 @@
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/71MZOY2UQSL._AC_SL1500_.jpg" alt="Medicine Ball">
+                                <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=400&h=300&fit=crop" alt="Medicine Ball">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Power</div>
@@ -2288,7 +2313,7 @@
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/81pf1zlUdBL._AC_SL1500_.jpg" alt="Resistance Loop Bands">
+                                <img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&h=300&fit=crop" alt="Resistance Loop Bands">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Mobility</div>
@@ -2303,7 +2328,7 @@
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/61E+OhgMBOL._AC_SL1500_.jpg" alt="Kettlebell">
+                                <img src="https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?w=400&h=300&fit=crop" alt="Kettlebell">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Strength</div>
@@ -2323,7 +2348,7 @@
                     <div class="product-grid" id="gear-technology-dynamic">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/61TqYMmGURL._AC_SL1500_.jpg" alt="Garmin Approach R10">
+                                <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=400&h=300&fit=crop" alt="Garmin Approach R10">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Launch Monitor</div>
@@ -2338,7 +2363,7 @@
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/61kXdYKYURL._AC_SL1500_.jpg" alt="FlightScope Mevo Plus">
+                                <img src="https://images.unsplash.com/photo-1592919505780-303950717480?w=400&h=300&fit=crop" alt="FlightScope Mevo Plus">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Launch Monitor</div>
@@ -2353,7 +2378,7 @@
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/61G+q8xgURL._AC_SL1500_.jpg" alt="Golf Swing Analyzer">
+                                <img src="https://images.unsplash.com/photo-1510571767101-3279e3e3890f?w=400&h=300&fit=crop" alt="Golf Swing Analyzer">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Swing Analysis</div>
@@ -2373,7 +2398,7 @@
                     <div class="product-grid" id="gear-recovery-dynamic">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/71J5h5CWPAL._AC_SL1500_.jpg" alt="TriggerPoint GRID Foam Roller">
+                                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop" alt="TriggerPoint GRID Foam Roller">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Mobility</div>
@@ -2388,7 +2413,7 @@
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/71h6PzHK8TL._AC_SL1500_.jpg" alt="Theragun Massage Gun">
+                                <img src="https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?w=400&h=300&fit=crop" alt="Theragun Massage Gun">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Massage</div>
@@ -2403,7 +2428,7 @@
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/71nK+XNBXIL._AC_SL1500_.jpg" alt="Lacrosse Balls for Massage">
+                                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop" alt="Lacrosse Balls for Massage">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Mobility</div>
@@ -2418,7 +2443,7 @@
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://m.media-amazon.com/images/I/61FQb2eXURL._AC_SL1500_.jpg" alt="Stretch Strap">
+                                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop" alt="Stretch Strap">
                             </div>
                             <div class="product-content">
                                 <div class="product-category">Stretching</div>
