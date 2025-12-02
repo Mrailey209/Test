@@ -11,27 +11,27 @@
           "category": "Speed Training",
           "rating": 4.9,
           "badge": "Editor's Choice",
-          "asin": "B01N9K3ZRW",
+          "asin": "B073SZXD2Q",
           "image": "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&h=300&fit=crop"
         },
         {
           "id": "prgr",
-          "name": "PRGR Portable Launch Monitor",
-          "description": "Affordable radar device for tracking swing speed at home or the range. Essential feedback for speed training protocols.",
+          "name": "PRGR Portable Launch Monitor HS-130A",
+          "description": "Affordable Doppler radar device for tracking swing speed, ball speed, and distance. Essential feedback for speed training protocols.",
           "category": "Speed Training",
           "rating": 4.5,
           "badge": "Best Value",
-          "asin": "B07PRLSDPG",
+          "asin": "B097DWG9MN",
           "image": "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=400&h=300&fit=crop"
         },
         {
           "id": "orangewhip",
-          "name": "Orange Whip Trainer",
-          "description": "Weighted flexible training aid that improves tempo, balance, and swing plane while building golf-specific strength.",
+          "name": "Orange Whip Compact Trainer",
+          "description": "Weighted flexible training aid that improves tempo, balance, and swing plane while building golf-specific strength. Made in USA.",
           "category": "Speed Training",
           "rating": 4.8,
           "badge": "Great for Warm-Up",
-          "asin": "B004HO6IEI",
+          "asin": "B09L53WPNP",
           "image": "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=400&h=300&fit=crop"
         }
       ]
@@ -41,42 +41,42 @@
       "products": [
         {
           "id": "trapbar",
-          "name": "Trap Bar / Hex Bar",
-          "description": "The deadlift variation every golfer should do. High-low handles accommodate all skill levels and reduce spine stress.",
+          "name": "CAP Barbell Olympic Hex Trap Bar",
+          "description": "The deadlift variation every golfer should do. High-low combo grip handles accommodate all skill levels and reduce spine stress.",
           "category": "Strength",
-          "rating": 4.9,
+          "rating": 4.6,
           "badge": "Best for Deadlifts",
-          "asin": "B01LXZFNS4",
+          "asin": "B083R4RMTH",
           "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop"
         },
         {
           "id": "medballs",
-          "name": "Medicine Balls (8-14 lbs)",
-          "description": "Essential for rotational power training. Non-bounce versions are ideal for wall throws and slams.",
+          "name": "BalanceFrom Medicine Ball",
+          "description": "Essential for rotational power training. Wall ball and slam ball options ideal for throws and explosive movements.",
           "category": "Power",
           "rating": 4.7,
           "badge": "Must-Have",
-          "asin": "B07GZQNXV5",
+          "asin": "B081M8FFX2",
           "image": "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=400&h=300&fit=crop"
         },
         {
           "id": "loopbands",
-          "name": "Mini Loop Bands Set",
-          "description": "Versatile resistance bands for hip activation, shoulder work, and rotational exercises. Travel-friendly training.",
+          "name": "Fit Simplify Resistance Loop Bands Set",
+          "description": "Set of 5 color-coded resistance bands for hip activation, shoulder work, and rotational exercises. Travel-friendly with carry bag.",
           "category": "Mobility",
           "rating": 4.6,
           "badge": "Great Value",
-          "asin": "B07CZH4PGS",
+          "asin": "B09MJKJYLQ",
           "image": "https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&h=300&fit=crop"
         },
         {
           "id": "kettlebell",
-          "name": "Kettlebell (24-32 kg)",
-          "description": "Perfect for swings, goblet squats, and single-arm work. One of the most versatile pieces of equipment for golfers.",
+          "name": "Ader Premier Kettlebell (24 Kg)",
+          "description": "Perfect for swings, goblet squats, and single-arm work. Wide smooth handle with flat bottom for stability.",
           "category": "Strength",
           "rating": 4.8,
           "badge": "Essential",
-          "asin": "B00XM2MRGI",
+          "asin": "B00822PSI2",
           "image": "https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?w=400&h=300&fit=crop"
         }
       ]
@@ -86,32 +86,32 @@
       "products": [
         {
           "id": "garminr10",
-          "name": "Garmin Approach R10",
-          "description": "Affordable personal launch monitor with 16+ metrics. Great for practice and home simulator use.",
+          "name": "Garmin Approach R10 Launch Monitor",
+          "description": "Portable personal launch monitor with 16+ metrics. Great for practice, home simulator use, and virtual rounds on 42,000+ courses.",
           "category": "Launch Monitor",
           "rating": 4.4,
           "badge": "Best Budget",
-          "asin": "B0932QDWGT",
+          "asin": "B095QX1FSR",
           "image": "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=400&h=300&fit=crop"
         },
         {
           "id": "mevoplus",
-          "name": "FlightScope Mevo+",
-          "description": "Professional-grade data in a portable package. Radar-based accuracy for serious practice and club fitting.",
+          "name": "FlightScope Mevo+ Launch Monitor",
+          "description": "Professional-grade data with Fusion Tracking technology. 20+ parameters, 12 E6 courses included, works indoors and outdoors.",
           "category": "Launch Monitor",
           "rating": 4.8,
           "badge": "Best Portable",
-          "asin": "B084DG5M7V",
+          "asin": "B095XDPM8L",
           "image": "https://images.unsplash.com/photo-1592919505780-303950717480?w=400&h=300&fit=crop"
         },
         {
           "id": "hackmotion",
-          "name": "HackMotion Wrist Sensor",
-          "description": "Biofeedback device that tracks wrist angles throughout the swing. Instant audio feedback for real-time improvement.",
+          "name": "HackMotion Plus Wrist Sensor",
+          "description": "Biofeedback device that tracks wrist angles throughout the swing. Real-time audio feedback for improving ball flight.",
           "category": "Swing Analysis",
           "rating": 4.7,
           "badge": "Best for Feel",
-          "asin": "B09GY7D1XM",
+          "asin": "B089YWFXHT",
           "image": "https://images.unsplash.com/photo-1510571767101-3279e3e3890f?w=400&h=300&fit=crop"
         }
       ]
@@ -122,7 +122,7 @@
         {
           "id": "foamroller",
           "name": "TriggerPoint GRID Foam Roller",
-          "description": "Multi-density surface for targeted myofascial release. Essential for T-spine mobility and post-round recovery.",
+          "description": "Multi-density surface for targeted myofascial release. Essential for T-spine mobility and post-round recovery. Supports up to 500 lbs.",
           "category": "Mobility",
           "rating": 4.9,
           "badge": "Best Overall",
@@ -131,28 +131,28 @@
         },
         {
           "id": "theragun",
-          "name": "Theragun Pro",
-          "description": "Percussive therapy device for deep muscle treatment. Reduces soreness and improves recovery between rounds and workouts.",
+          "name": "Theragun Pro (4th Gen)",
+          "description": "Percussive therapy device with Bluetooth, OLED screen, and 4 arm positions. 5 hours battery life with swappable batteries.",
           "category": "Massage",
           "rating": 4.8,
           "badge": "Premium Choice",
-          "asin": "B086Z6LF7F",
+          "asin": "B086Z5YL9Q",
           "image": "https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?w=400&h=300&fit=crop"
         },
         {
           "id": "lacrosseballs",
-          "name": "Lacrosse Ball Set",
-          "description": "Simple but effective for targeted trigger point release. Great for glutes, forearms, and feet.",
+          "name": "Kieba Massage Lacrosse Balls Set",
+          "description": "Set of 2 firm balls for targeted trigger point release. Great for glutes, forearms, feet, and hard-to-reach areas.",
           "category": "Mobility",
           "rating": 4.5,
           "badge": "Best Budget",
-          "asin": "B00BCRE7MS",
+          "asin": "B017V7UKW2",
           "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop"
         },
         {
           "id": "stretchstrap",
-          "name": "Stretch Strap with Loops",
-          "description": "Numbered loops allow consistent stretching positions. Great for hamstrings, shoulders, and hip flexors.",
+          "name": "OPTP Stretch Out Strap",
+          "description": "Numbered loops allow consistent stretching positions. Made in USA. Great for hamstrings, shoulders, and hip flexors.",
           "category": "Stretching",
           "rating": 4.4,
           "badge": "Simple & Effective",
